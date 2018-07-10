@@ -1,0 +1,3 @@
+# The following will be ignored by eslint
+src/registerServiceWorker.js
+src/App.test.js
