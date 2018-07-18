@@ -6,14 +6,44 @@
   margin: auto;
 }
 
-.display_panel {
-  background: #FFFFFF;
-  border: solid #000000 1px;
+.calculator_inner_body {
   position: relative;
   margin: auto;
-  top: 5px;
+  border: solid #000000 1px;
   width: 95%;
+  height: 95%;
+  top: 10px;  
+}
+
+.display_panel {
+  background: #FFFFFF;
+  border: solid #1a0ec7 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 100px;
   font-size: 5rem;
   text-align: right;
 }
+
+.button_placement {
+  border: solid #1a0ec7 1px;
+  position: absolute;
+  height: 450px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.button_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.number_button {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+}
+
