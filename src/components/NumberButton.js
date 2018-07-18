@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class CalculatorNumber extends Component {
-  state = {
-    buttonNumber: this.props.number
-  }
-
+class NumberButton extends Component {
   handleClick = () => {
     this.props.onNumberClick(this.props.number);
   }
@@ -22,10 +18,10 @@ class CalculatorNumber extends Component {
   }
 }
 
-CalculatorNumber.propTypes = {
+NumberButton.propTypes = {
   number: PropTypes.number.isRequired,
   onNumberClick: PropTypes.func.isRequired
   
 };
 
-export default CalculatorNumber;
+export default NumberButton;

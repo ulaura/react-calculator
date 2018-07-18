@@ -12,7 +12,7 @@ class DisplayPanel extends Component {
 }
 
 DisplayPanel.propTypes = {
-  value: PropTypes.array.isRequired
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.array]).isRequired
 };
 
 export default DisplayPanel;

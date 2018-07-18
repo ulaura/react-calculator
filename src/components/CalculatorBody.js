@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DisplayPanel from './DisplayPanel';
-import CalculatorNumber from './CalculatorNumber';
+import NumberButton from './NumberButton';
+import ClearButton from './ClearButton';
 
 class CalculatorBody extends Component {
   state = {
@@ -14,6 +15,10 @@ class CalculatorBody extends Component {
     this.setState({currentValue: [...this.state.currentValue, number]});
   }
 
+  handleClearClick = () => {
+    this.setState({currentValue: 0});
+  }
+
   render() {
     console.log(this.state.currentValue);
     return (
@@ -22,22 +27,23 @@ class CalculatorBody extends Component {
           <DisplayPanel value={this.state.currentValue} />
           <div className="button_placement">
             <div className="button_row">
-              <CalculatorNumber number={1} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={2} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={3} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={1} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={2} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={3} onNumberClick={this.handleNumberClick} />
             </div>
             <div className="button_row">
-              <CalculatorNumber number={4} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={5} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={6} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={4} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={5} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={6} onNumberClick={this.handleNumberClick} />
             </div>
             <div className="button_row">
-              <CalculatorNumber number={7} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={8} onNumberClick={this.handleNumberClick} />
-              <CalculatorNumber number={9} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={7} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={8} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={9} onNumberClick={this.handleNumberClick} />
             </div>
             <div className="button_row">
-              <CalculatorNumber number={0} onNumberClick={this.handleNumberClick} />
+              <NumberButton number={0} onNumberClick={this.handleNumberClick} />
+              <ClearButton onClearClick={this.handleClearClick} />
             </div>
           </div>
         </div>
@@ -47,7 +53,9 @@ class CalculatorBody extends Component {
 }
 
 CalculatorBody.propTypes = {
-  number: PropTypes.number.isRequired
+  number: PropTypes.number
 };
+
+
 
 export default CalculatorBody;
