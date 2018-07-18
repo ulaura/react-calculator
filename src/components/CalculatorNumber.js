@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class CalculatorNumber extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    buttonNumber: this.props.number
+  }
+
+  handleClick = () => {
+    this.props.onNumberClick(this.props.number);
   }
 
   render() {
     return (
-      <button className="number_button">
+      <button 
+        className="number_button"
+        onClick={this.handleClick}
+      >
         {this.props.number}
       </button>
     );
@@ -16,7 +23,9 @@ class CalculatorNumber extends Component {
 }
 
 CalculatorNumber.propTypes = {
-  number: PropTypes.number.isRequired
+  number: PropTypes.number.isRequired,
+  onNumberClick: PropTypes.func.isRequired
+  
 };
 
 export default CalculatorNumber;

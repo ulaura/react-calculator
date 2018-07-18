@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class DisplayPanel extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: 0
-    };
-  }
-
   render() {
     return (
       <div className="display_panel">
-        {this.state.value}
+        {this.props.value}
       </div>
     );
   }
 }
+
+DisplayPanel.propTypes = {
+  value: PropTypes.array.isRequired
+};
 
 export default DisplayPanel;
